@@ -1,0 +1,35 @@
+:host::ng-deep {
+
+
+.course-card {
+  margin: 20px 10px;
+}
+
+.course-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.course-actions button {
+  margin-right: 5px;
+}
+
+.mat-mdc-card-header {
+  display: flex;
+  padding: 16px 16px;
+}
+
+.mat-mdc-card-content > :last-child:not(.mat-mdc-card-footer) {
+  margin-bottom: revert;
+}
+
+.mdc-card__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: content-box;
+  min-height: 52px;
+  padding: 8px;
+}
+
+}
