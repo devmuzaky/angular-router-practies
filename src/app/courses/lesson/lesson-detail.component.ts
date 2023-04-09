@@ -17,22 +17,19 @@ export class LessonDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {
-
-    console.log("Created LessonDetailComponent...");
-
   }
 
   ngOnInit() {
     this.lesson$ = this.route.data.pipe(map(data => data['lesson']));
+    // this.lesson = this.route.snapshot.data['lesson']
   }
 
-  previous(lesson: LessonDetail) {
-    this.router.navigate(['lessons', lesson.seqNo - 1], {relativeTo: this.route.parent});
-  }
 
   next(lesson: LessonDetail) {
     this.router.navigate(['lessons', lesson.seqNo + 1], {relativeTo: this.route.parent});
   }
 
-
+  previous(lesson: LessonDetail) {
+    this.router.navigate(['lessons', lesson.seqNo - 1], {relativeTo: this.route.parent})
+  }
 }

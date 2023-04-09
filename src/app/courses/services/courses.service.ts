@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable,of} from 'rxjs';
+import {EMPTY, Observable, of} from 'rxjs';
 import {map, shareReplay} from 'rxjs/operators';
 import {Course} from "../model/course";
 import {LessonDetail} from "../model/lesson-detail";

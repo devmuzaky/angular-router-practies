@@ -18,7 +18,7 @@ export class LessonsResolver implements Resolve<LessonSummary[]> {
     Observable<LessonSummary[]> {
 
     const courseUrl = route.paramMap.get('courseUrl');
-
+    console.log(route)
     return this.courses.loadAllCourseLessonsSummary(courseUrl);
 
   }

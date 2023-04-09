@@ -29,9 +29,6 @@ export class LoadingComponent implements OnInit {
 
   }
 
-
-
-
   ngOnInit() {
 
       if (this.detectRoutingOngoing) {
