@@ -51,7 +51,9 @@ const routes: Routes = [
         enableTracing: false,
         useHash: false,
         scrollPositionRestoration: "enabled",
-        paramsInheritanceStrategy: "always"
+        paramsInheritanceStrategy: "always",
+        malformedUriErrorHandler:
+          (error, urlSerializer, url) => urlSerializer.parse('/page-not-found')
       }
     )
   ],
