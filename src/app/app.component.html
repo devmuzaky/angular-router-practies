@@ -4,7 +4,11 @@
 
     <div class="toolbar-tools">
 
-      <a class="menu-item" mat-button routerLink="/courses" routerLinkActive="menu-item-active">
+      <a [routerLinkActiveOptions]="{exact:true}"
+         class="menu-item" mat-button
+         routerLink="/courses"
+         routerLinkActive="menu-item-active"
+      >
         <span>Courses</span>
       </a>
 
@@ -12,8 +16,8 @@
         <span>About</span>
       </a>
 
-      <a mat-button class="menu-item"
-         *ngIf="auth.isLoggedOut$ | async"
+      <a *ngIf="auth.isLoggedOut$ | async" class="menu-item"
+         mat-button
          routerLink="/login"
          routerLinkActive="menu-item-active">
         <mat-icon>account_circle</mat-icon>
@@ -22,11 +26,14 @@
 
     </div>
 
-    <a mat-button class="menu-item" *ngIf="auth.isLoggedIn$ | async">
+    <a *ngIf="auth.isLoggedIn$ | async"
+       class="menu-item" mat-button
+       [routerLink]="[{outlets:{chat:['helpdesk-chat']}}]"
+    >
       <mat-icon>help</mat-icon>
     </a>
 
-    <a mat-button class="menu-item" (click)="logout()" *ngIf="auth.isLoggedIn$ | async">
+    <a (click)="logout()" *ngIf="auth.isLoggedIn$ | async" class="menu-item" mat-button>
       <mat-icon>exit_to_app</mat-icon>
       <span>Logout</span>
     </a>
@@ -36,10 +43,9 @@
 
     <ng-container *ngIf="(auth.user$ | async) as user">
 
-      <img class="profile-picture" [src]="user.pictureUrl">
+      <img [src]="user.pictureUrl" class="profile-picture">
 
     </ng-container>
-
 
 
   </mat-toolbar>
@@ -53,3 +59,5 @@
 
 </mat-sidenav-container>
 
+
+<router-outlet name="chat" ></router-outlet>
