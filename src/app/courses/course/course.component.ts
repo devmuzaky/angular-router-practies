@@ -4,33 +4,23 @@ import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
-    selector: 'course',
-    templateUrl: './course.component.html',
-    styleUrls: ['./course.component.css']
+  selector: 'course', templateUrl: './course.component.html', styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
 
-    course: Course;
-    couponCode: string;
+  course: Course;
+  couponCode: string;
 
-    constructor(private route: ActivatedRoute) {
-    }
+  constructor(private route: ActivatedRoute) {
+  }
 
-    ngOnInit() {
-      this.course = this.route.snapshot.data['course'];
+  ngOnInit() {
+    this.course = this.route.snapshot.data['course'];
 
-    }
+  }
 
+  confirmExit():boolean {
+    return confirm(`Are ypu sure you want to exit ${this.course.description}`);
+  }
 
 }
-
-
-
-
-
-
-
-
-
-
-

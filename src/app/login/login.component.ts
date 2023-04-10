@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     private auth: AuthStore) {
 
     this.form = fb.group({
-      email: ['test@angular-university.io', [Validators.required]],
-      password: ['test', [Validators.required]]
+      email: ['moe_zaki@gmail.com', [Validators.required]],
+      password: ['moe_', [Validators.required]]
     });
 
   }
@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
 
     this.auth.login(val.email, val.password)
         .subscribe(
-            () => {},
+            () => {
+              this.router.navigateByUrl('/courses')
+            },
             err => {
                 alert("Login failed!");
             }

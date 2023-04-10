@@ -1077,8 +1077,8 @@ export const LESSONS = {
 export const USERS = {
   1: {
     id: 1,
-    email: 'test@angular-university.io',
-    password: 'test',
+    email: 'moe_zaki@gmail.com',
+    password: 'moe_',
     pictureUrl: 'https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png'
   }
 
