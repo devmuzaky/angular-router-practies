@@ -49,7 +49,9 @@ const routes: Routes = [
       {
         preloadingStrategy: CustomPreloadingStrategy,
         enableTracing: false,
-        useHash: true
+        useHash: false,
+        scrollPositionRestoration: "enabled",
+        paramsInheritanceStrategy: "always"
       }
     )
   ],
