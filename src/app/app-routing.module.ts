@@ -48,7 +48,8 @@ const routes: Routes = [
       routes,
       {
         preloadingStrategy: CustomPreloadingStrategy,
-        enableTracing: false
+        enableTracing: false,
+        useHash: true
       }
     )
   ],
