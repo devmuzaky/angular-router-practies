@@ -1,5 +1,3 @@
-
-
 export interface LessonDetail {
   id: number;
   description: string;
